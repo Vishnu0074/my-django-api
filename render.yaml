@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: my-django-api
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn myprojectname.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: spotify_backend.settings
+      - key: PYTHON_VERSION
+        value: 3.10
